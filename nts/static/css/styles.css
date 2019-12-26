@@ -1,0 +1,8 @@
+.col-sm-2 {
+    background-color: aliceblue;
+}
+.sidebar-nav {
+    margin-top: 20px;
+    padding: 10px;
+    list-style: none;
+}

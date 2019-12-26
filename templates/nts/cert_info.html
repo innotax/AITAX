@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Home</h1>
+<p>
+<button onclick="location.href='{% url 'script1' %}'">인증서모듈실행</button><hr>
+{% if data %}
+{{data}}
+{% endif %}
+</p> 
+
+{% endblock %}
