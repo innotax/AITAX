@@ -1,11 +1,67 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Home</h1>
+<h5>홈택스 로그인 정보 저장</h5>
 <p>
-<button onclick="location.href='{% url 'script1' %}'">인증서모듈실행</button><hr>
-{% if data %}
-{{data}}
+<div class="form-inline">
+    <button class="btn btn-outline-primary btn-sm" onclick="location.href='{% url 'script1' %}'">인증서등록</button>
+    <div class="form-group">
+        <label for="select-cert">인증서선택</label>
+        <!-- <input type="text" class="form-control" id="select-cert"> -->
+        <select class="form-control" id="select-cert" name="select-cert">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail2">Email</label>
+        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+    </div>
+</div>
+
+<!-- <div>
+    <button class="btn btn-outline-primary btn-sm" onclick="location.href='{% url 'script1' %}'">인증서등록</button>
+
+    <select class="form-control" id="sel1" name="sellist1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+    </select>
+</div> -->
+
+<!-- 에러메세지 https://docs.djangoproject.com/en/3.0/ref/contrib/messages/  -->
+{% if messages %}
+<div class="alert alert-danger">
+    {% for message in messages %}
+    <strong>에러 : </strong> {{ message }}
+    {% endfor %}
+</div>
+<!-- <ul class="alert alert-danger">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul> -->
+{% endif %}
+<hr>
+{% if dic %}
+<!--Display JSON as table in Django   -->
+<div class="table table-sm table-bordered table-hover table-condensed table-responsive">
+    <table>
+        <tr class="thead-dark">
+            <th>key</th>
+            <th>value</th>
+        </tr>
+        {% for key, value in dic.items %}
+        <tr>
+            <th>{{key}}</th>
+            <td>{{value}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
 {% endif %}
 </p> 
 

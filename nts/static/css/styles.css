@@ -1,3 +1,6 @@
+/* body {
+    background-color: greenyellow; */
+/* } */
 .col-sm-2 {
     background-color: aliceblue;
 }
@@ -5,4 +8,9 @@
     margin-top: 20px;
     padding: 10px;
     list-style: none;
+}
+.cert-table table th, td {
+    width: 100%;
+    border: 1px solid #444444;
+    border-collapse: collapse;
 }
