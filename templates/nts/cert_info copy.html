@@ -9,9 +9,9 @@
     <div class="form-group form-group-sm">
         <label for="select-cert" >인증서</label>
         <select class="form-control form-control-sm" style="width: 100px" id="select-cert" name="select-cert">
-            {% if ctacert_from_db %}
-            {% for obj in ctacert_from_db %}
-            <option value="{{obj.cert_nm}}" {% if obj.display_default.max %} selected {% endif %} >{{obj.cert_nm}}</option>
+            {% if dic_sum.dic_1st.lst_cert_nm %}
+            {% for cert_nm in dic_sum.dic_1st.lst_cert_nm %}
+            <option>{{cert_nm}}</option>
             {% endfor %}
             {% else %}
             <option>인증서등록요망</option>

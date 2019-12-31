@@ -1,6 +1,9 @@
 /* body {
     background-color: greenyellow; */
 /* } */
+label {
+    font-size: 14px;
+}
 .col-sm-2 {
     background-color: aliceblue;
 }
@@ -13,4 +16,14 @@
     width: 100%;
     border: 1px solid #444444;
     border-collapse: collapse;
+}
+.form-group-sm, .form-control-sm{
+    margin-left: 5px;
+    padding-top: 2px;
+}
+.form-control-sm {
+    max-width: 80px;
+}
+#select-cert {
+    max-width: 100px;
 }
