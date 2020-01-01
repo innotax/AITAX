@@ -2,13 +2,17 @@ from django.shortcuts import render
 from django.conf import settings
 from utils import ift
 import json
-from nts.models import CtaCert
+from .models import CtaCert, CtaIdPw
 from django.db import IntegrityError
 from django.contrib import messages  # 경고창 https://hoy.kr/kxuTa
 # model object to dict  https://brownbears.tistory.com/276
 from django.forms.models import model_to_dict
+from django.views.generic import CreateView  # askdjango 이진석 폼사용
+from .forms import CtaIdPwForm               # askdjango 이진석 폼사용
 
 # Create your views here.
+# askdjango 이진석 폼사용
+ctaidpw_new = CreateView.as_view(model=CtaIdPw, form_class=CtaIdPwForm)
 
 def cert_info(request):
     ctacert_from_db = CtaCert.objects.all()
